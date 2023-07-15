@@ -5,7 +5,7 @@ import Container from "~/components/container";
 export default component$(() => {
   return (
     <Container classCustom="my-8 flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8">
-      <div class="flex flex-col gap-4 text-center lg:text-left">
+      <div class="flex flex-col gap-4 text-center lg:text-left h-[40rem]">
         <h1 class="font-bold text-xl lg:text-5xl">
           About The Simpsons Quote App
         </h1>

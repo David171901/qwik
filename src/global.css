@@ -1,4 +1,10 @@
-
+/**
+ * Tailwind CSS imports
+ * View the full documentation at https://tailwindcss.com
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /**
  * WHAT IS THIS FILE?
@@ -20,4 +26,77 @@ html {
 body {
   padding: 0;
   line-height: inherit;
+}
+
+:root {
+  --color-brand: #ffde00;
+  --color-contrast: #ee3133;
+  --color-light: #fff;
+}
+
+@font-face {
+  font-family: 'Lexend';
+  src: url('../src/assets/fonts/Lexend-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lexend';
+  src: url('../src/assets/fonts/Lexend-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lexend';
+  src: url('../src/assets/fonts/Lexend-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Lexend', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+p {
+  margin-bottom: 1rem;
+}
+
+.grid-page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.grid-container {
+  width: 100%;
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  place-items: center;
+  grid-gap: 20px;
+}
+
+@layer components {
+  .bg-brand {
+    @apply bg-[var(--color-brand)];
+  }
+
+  .btn {
+    @apply bg-white py-0.5 px-5 border border-black text-base hover:bg-[var(--color-contrast)] focus:bg-[var(--color-contrast)] cursor-pointer w-fit transition-all;
+  }
+  
+  .btn-contrast {
+    @apply bg-[var(--color-contrast)] hover:bg-[var(--color-brand)] focus:bg-[var(--color-brand)] text-white
+  }
+
+  .btn-brand {
+    @apply bg-[var(--color-brand)]
+  }
 }

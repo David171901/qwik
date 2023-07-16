@@ -1,17 +1,21 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import { AppWrapper } from "~/components/app-wrapper";
+import { Navigation } from "~/components/navigation";
+import { WeatherInfo } from "~/components/weather-info";
 
 export default component$(() => {
-  console.log(import.meta.env.ACCESS_KEY_UNSPLASH)
+  const city = useSignal("Granada");
+
   return (
-    <>
-      <h1>Hi 👋</h1>
-      <p>
-        Can't wait to see what you build with qwik!
-        <br />
-        Happy coding.
-      </p>
-    </>
+    <AppWrapper>
+      <Navigation />
+      <h1>
+        The weather in <span>{city.value}</span>
+      </h1>
+
+      <WeatherInfo city={city} />
+    </AppWrapper>
   );
 });
 
